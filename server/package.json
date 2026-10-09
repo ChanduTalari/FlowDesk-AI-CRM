@@ -1,0 +1,27 @@
+{
+  "name": "ai-crm-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node --check server.js",
+    "check": "node --check server.js && node --check src/config/env.js && node --check src/controllers/leadController.js && node --check src/errors/AppError.js && node --check src/middleware/errorHandler.js && node --check src/middleware/rateLimit.js && node --check src/middleware/requireAdmin.js && node --check src/middleware/validate.js && node --check src/middleware/verifyWebhookSignature.js && node --check src/routes/inboundEmail.js && node --check src/routes/leads.js && node --check src/services/aiJobService.js && node --check src/services/aiService.js && node --check src/services/backgroundWorker.js && node --check src/services/emailQueue.js && node --check src/services/emailService.js && node --check src/services/followUpSequenceService.js && node --check src/services/inboundEmailService.js && node --check src/services/leadService.js && node --check src/db/supabase.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "joi": "^17.13.3",
+    "multer": "^2.0.2",
+    "nodemailer": "^6.10.1",
+    "nodemon": "^3.1.14"
+  }
+}
